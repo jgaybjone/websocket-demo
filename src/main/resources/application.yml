@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: websocket-demo
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+debug: true
