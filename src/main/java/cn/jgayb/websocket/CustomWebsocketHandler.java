@@ -1,6 +1,7 @@
 package cn.jgayb.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.socket.CloseStatus;
 import org.springframework.web.reactive.socket.HandshakeInfo;

@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by jone.wang on 2018/7/26.
  * Description: js code
- *
+ * <p>
  * var  wsServer = 'ws://localhost:8080/websocket?token=12345';
  * var  websocket = new WebSocket(wsServer);
  * websocket.onopen = function (evt) { onOpen(evt) };
@@ -27,16 +27,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * websocket.onmessage = function (evt) { onMessage(evt) };
  * websocket.onerror = function (evt) { onError(evt) };
  * function onOpen(evt) {
- *      console.log("Connected to WebSocket server.");
+ * console.log("Connected to WebSocket server.");
  * }
  * function onClose(evt) {
- *      console.log("Disconnected");
+ * console.log("Disconnected");
  * }
  * function onMessage(evt) {
- *      console.log('Retrieved data from server: ' + new Date() +"\ndata: " + evt.data);
+ * console.log('Retrieved data from server: ' + new Date() +"\ndata: " + evt.data);
  * }
  * function onError(evt) {
- *      console.log('Error occured: ' + evt.data);
+ * console.log('Error occured: ' + evt.data);
  * };
  */
 @Service
@@ -69,7 +69,7 @@ public class WebPushServiceImpl {
 
     }
 
-    private synchronized void process(WebSocketSession session, SynchronousSink<WebSocketMessage> sink) {
+    private void process(WebSocketSession session, SynchronousSink<WebSocketMessage> sink) {
         final String query = session.getHandshakeInfo().getUri().getQuery();
         List<String> list = msgStorage.get(query);
         if (CollectionUtils.isEmpty(list)) {
